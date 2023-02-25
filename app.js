@@ -33,7 +33,6 @@ function PageTransitions() {
     allSections.addEventListener('click', (e) => {
         const id = e.target.dataset.id;
         if (id) {
-            transition.style.display = 'block';
             transition.classList.add('show')
             setTimeout(() => {
                 // remove selected from other buttons
@@ -48,9 +47,12 @@ function PageTransitions() {
                 })
                 const element = document.getElementById(id)
                 element.classList.add('active')
-
-                transition.classList.remove('show')
-            }, 1000);
+                setTimeout(() => {
+                    console.log(transition)
+                    transition.classList.remove('show')
+                    transition.style.display = 'block'
+                }, 500)
+            }, 500);
         }
     })
 }
