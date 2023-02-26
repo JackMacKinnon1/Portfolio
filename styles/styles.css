@@ -173,6 +173,7 @@ section {
 .header-content .right-header span {
   color: #257747;
   font-size: 1.6rem;
+  font-weight: bold;
 }
 .header-content .right-header p {
   margin: 1.5rem 0;
@@ -193,11 +194,16 @@ section {
   margin-top: 5%;
   justify-content: flex-end;
   align-items: center;
+  opacity: 0;
+  transition: all 1s;
 }
 .header-content .right-header .view-more label {
   font-size: 1.5rem;
   font-style: italic;
   margin-right: 2%;
+}
+.header-content .right-header .pop-in {
+  animation: link-pop-to-screen 1s forwards;
 }
 
 .about-content {
@@ -208,6 +214,7 @@ section {
   display: flex;
   align-self: center;
   font-size: 1.8rem;
+  margin-bottom: 5%;
 }
 .about-content .my-info-body {
   display: flex;
@@ -253,7 +260,8 @@ section {
   transition: all 0.4s ease-in-out;
 }
 .about-content .my-info-body .my-achievements .my-achievements-body .achievement span {
-  color: var(--color-secondary);
+  color: var(--color-white);
+  transition: all 0.4s ease-in-out;
 }
 .about-content .my-info-body .my-achievements .my-achievements-body .achievement:hover {
   cursor: default;
@@ -261,10 +269,88 @@ section {
   border: 1px solid var(--color-grey-1);
   color: var(--color-white);
 }
+.about-content .my-info-body .my-achievements .my-achievements-body .achievement:hover .ach-text {
+  color: var(--color-white);
+}
+.about-content .my-info-body .my-achievements .my-achievements-body .achievement:hover .ach-text span {
+  color: var(--color-secondary);
+}
 .about-content .my-info-body .my-achievements .my-achievements-body .achievement .ach-text {
   margin: 10%;
   text-align: center;
   color: var(--color-grey-3);
+  transition: all 0.4s ease-in-out;
+}
+
+.work-examples {
+  display: flex;
+  flex-direction: column;
+}
+.work-examples .work-example-header {
+  align-self: center;
+  font-size: 1.3rem;
+  margin-bottom: 5%;
+}
+.work-examples .work-example-body {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--color-grey-5);
+  padding: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-radius: 15px;
+}
+.work-examples .work-example-body .work-example-picture img {
+  flex-shrink: 2;
+  transition: all 1s;
+}
+.work-examples .work-example-body .work-example-picture img:hover {
+  transform: scale(104%);
+  border: 1px solid var(--color-white);
+}
+.work-examples .work-example-body .work-example-text {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.work-examples .work-example-body .work-example-text .example-header {
+  margin-bottom: 1.5%;
+  border-bottom: 1px solid var(--color-secondary);
+}
+.work-examples .work-example-body .work-example-text .example-header span {
+  color: var(--color-grey-3);
+}
+.work-examples .work-example-body .work-example-text .github {
+  font-size: 2rem;
+  margin-top: auto;
+  align-self: end;
+  transition: all 1s;
+}
+.work-examples .work-example-body .work-example-text .github:hover {
+  transform: scale(150%);
+}
+
+@keyframes link-pop-to-screen {
+  0% {
+    opacity: 0;
+    transform: translateX(-40%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
 }
 
 @media screen and (max-width: 1250px) {

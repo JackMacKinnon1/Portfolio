@@ -172,6 +172,7 @@ section {
         span {
             color:#257747;
             font-size: 1.6rem;
+            font-weight: bold;
         }
         p {
             margin: 1.5rem 0;
@@ -193,11 +194,17 @@ section {
             margin-top: 5%;
             justify-content: flex-end;
             align-items: center;
+            opacity: 0;
+            transition: all 1s;
             label {
                 font-size: 1.5rem;
                 font-style: italic;
                 margin-right: 2%;
             }
+        }
+
+        .pop-in {
+            animation: link-pop-to-screen 1s forwards;
         }
     }
 }
@@ -209,6 +216,7 @@ section {
         display: flex;
         align-self: center;
         font-size: 1.8rem;
+        margin-bottom: 5%;
     }
 
     .my-info-body {
@@ -252,18 +260,26 @@ section {
                     display: flex;
                     align-items: center;
                     span {
-                        color: var(--color-secondary);
+                        color: var(--color-white);
+                        transition: all .4s ease-in-out;
                     }
                     &:hover {
                         cursor: default;
                         transform: translateY(-5px);
                         border: 1px solid var(--color-grey-1);
                         color: var(--color-white);
+                        .ach-text {
+                            color: var(--color-white);
+                            span {
+                                color: var(--color-secondary);
+                            }
+                        }
                     }
                     .ach-text {
                         margin: 10%;
                         text-align: center;
                         color: var(--color-grey-3);
+                        transition: all .4s ease-in-out;
                     }
                     border: 1px solid var(--color-grey-3);
                     border-radius: 4px;
@@ -274,5 +290,80 @@ section {
     }
 }
 
+.work-examples {
+    display: flex;
+    flex-direction: column;
+    .work-example-header {
+        align-self: center;
+        font-size: 1.3rem;
+        margin-bottom: 5%;
+    }
+
+    .work-example-body {
+        display: flex;
+        justify-content: space-around;
+        background-color: var(--color-grey-5);
+        padding: 2%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        border-radius: 15px;
+        
+        .work-example-picture {
+            img {
+                flex-shrink: 2;
+                transition: all 1s;
+                &:hover {
+                    transform: scale(104%);
+                    border: 1px solid var(--color-white);
+                }
+            }
+        }
+        .work-example-text {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            .example-header {
+                margin-bottom: 1.5%;
+                border-bottom: 1px solid var(--color-secondary);
+                span {
+                    color: var(--color-grey-3);
+                }
+            }
+
+            .github {
+                font-size: 2rem;
+                margin-top: auto;
+                align-self: end;
+                transition: all 1s;
+                &:hover {
+                    transform: scale(150%);
+                }
+            }
+        }
+    }
+}
+
+@keyframes link-pop-to-screen {
+    0% {
+        opacity: 0;
+        transform: translateX(-40%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
 
 @import './media';
