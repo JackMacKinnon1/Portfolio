@@ -8,7 +8,7 @@ const transition = document.querySelector('.transition');
 const controls = document.querySelector(".controls");
 
 document.addEventListener("mousemove", (event) => {
-    if (event.clientX > window.innerWidth - (sectBtns[0].offsetWidth + sectBtns[0].clientWidth + 5)) {
+    if (event.clientX > window.innerWidth - (sectBtns[0].offsetWidth + sectBtns[0].clientWidth + 15)) {
         controls.style.right = "0";
     } else {
         controls.style.right = "-200px";

@@ -5,6 +5,10 @@
   list-style: none;
 }
 
+p, h1 {
+  cursor: default;
+}
+
 :root {
   --color-primary: #191d2b;
   --color-secondary: #27AE60;
@@ -28,6 +32,8 @@ body {
   font-size: 1.1rem;
   color: var(--color-white);
   transition: all 0.4s ease-in-out;
+  position: relative;
+  min-height: 100vh;
 }
 
 a {
@@ -159,6 +165,7 @@ section {
 }
 .header-content .right-header {
   display: flex;
+  width: 60%;
   flex-direction: column;
   justify-content: center;
   padding-right: 10rem;
@@ -172,6 +179,92 @@ section {
   line-height: 2rem;
   color: var(--color-white);
   font-size: 1.5rem;
+}
+.header-content .right-header .arrow {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid var(--color-white);
+  align-self: flex-end;
+}
+.header-content .right-header .view-more {
+  display: flex;
+  margin-top: 5%;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header-content .right-header .view-more label {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-right: 2%;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+}
+.about-content .about-header {
+  display: flex;
+  align-self: center;
+  font-size: 1.8rem;
+}
+.about-content .my-info-body {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.3rem;
+}
+.about-content .my-info-body h1 {
+  color: var(--color-white);
+  border-bottom: 1px solid var(--color-secondary);
+}
+.about-content .my-info-body .my-story {
+  width: 40%;
+}
+.about-content .my-info-body .my-story .about-me-header {
+  font-size: 1.6rem;
+}
+.about-content .my-info-body .my-story p {
+  color: var(--color-grey-1);
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.about-content .my-info-body .my-achievements {
+  width: 50%;
+}
+.about-content .my-info-body .my-achievements .my-achievements-header {
+  font-size: 0.9rem;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+.about-content .my-info-body .my-achievements .my-achievements-body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.about-content .my-info-body .my-achievements .my-achievements-body .achievement {
+  width: 90%;
+  margin-bottom: 10%;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-grey-3);
+  border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+}
+.about-content .my-info-body .my-achievements .my-achievements-body .achievement span {
+  color: var(--color-secondary);
+}
+.about-content .my-info-body .my-achievements .my-achievements-body .achievement:hover {
+  cursor: default;
+  transform: translateY(-5px);
+  border: 1px solid var(--color-grey-1);
+  color: var(--color-white);
+}
+.about-content .my-info-body .my-achievements .my-achievements-body .achievement .ach-text {
+  margin: 10%;
+  text-align: center;
+  color: var(--color-grey-3);
 }
 
 @media screen and (max-width: 1250px) {
