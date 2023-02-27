@@ -18,3 +18,14 @@
         }
     }
 }
+
+@media screen and (min-width: 1800px) {
+    .active {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-content {
+        max-width: 1800px;
+    }
+}
