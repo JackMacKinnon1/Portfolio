@@ -1,1 +1,0 @@
-# Jack MacKinnons portfolio code
