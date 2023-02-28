@@ -163,6 +163,9 @@ section {
   align-items: center;
   justify-content: center;
 }
+.header-content .left-header .image {
+  scale: 95%;
+}
 .header-content .right-header {
   display: flex;
   width: 60%;
@@ -290,7 +293,7 @@ section {
 }
 .work-examples .work-example-header {
   align-self: center;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   margin-bottom: 5%;
 }
 .work-examples .work-example-body {
@@ -362,7 +365,89 @@ section {
   max-width: 1080px;
 }
 
-@media screen and (max-width: 1250px) {
+.my-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+}
+.my-info .my-info-header {
+  align-self: center;
+  font-size: 1.8rem;
+  margin-bottom: 5%;
+}
+.my-info .my-socials {
+  border: 1px solid var(--color-grey-5);
+  border-radius: 25px;
+  display: flex;
+  margin-top: 5%;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.4s ease-in-out;
+}
+.my-info .my-socials:hover {
+  transform: scale(110%);
+}
+.my-info .my-socials .github a {
+  margin-top: 3%;
+  font-size: 3rem;
+  transition: all 1s ease-in-out;
+}
+.my-info .my-socials .github a:hover {
+  transform: scale(120%);
+}
+.my-info .main-btn {
+  border-radius: 30px;
+  color: inherit;
+  font-weight: 600;
+  position: relative;
+  border: 1px solid var(--color-secondary);
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+.my-info .main-btn .btn-text {
+  padding: 0 2rem;
+}
+.my-info .main-btn .btn-icon {
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 1rem;
+}
+.my-info .main-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: all 0.4s ease-out;
+  z-index: -1;
+}
+.my-info .main-btn:hover {
+  transition: all 0.4s ease-out;
+}
+.my-info .main-btn:hover::before {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  transform: translateX(0);
+  transition: all 0.4s ease-out;
+}
+
+@media screen and (min-width: 1800px) {
+  .active {
+    display: flex;
+    justify-content: center;
+  }
+  .header-content {
+    max-width: 1800px;
+  }
+}
+@media screen and (max-width: 1200px) {
   .header-content {
     display: flex;
     flex-direction: column;
@@ -381,13 +466,74 @@ section {
     padding-right: 0%;
     flex-shrink: 1;
   }
-}
-@media screen and (min-width: 1800px) {
-  .active {
-    display: flex;
+  .my-info-body {
+    flex-direction: column;
     justify-content: center;
   }
-  .header-content {
-    max-width: 1800px;
+  .my-info-body .my-story, .my-info-body .my-achievements {
+    width: auto !important;
+  }
+  .work-example-body {
+    flex-direction: column;
+    align-items: center;
+  }
+  .work-example-body .work-example-text {
+    margin-top: 5%;
+  }
+  .work-example-body .work-example-text span {
+    color: var(--color-secondary) !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .header-content .left-header .image {
+    display: none;
+  }
+  .header-content .right-header h1 {
+    font-size: 4.5rem;
+  }
+  .section {
+    padding: 5% 5%;
+  }
+  .work-example-text {
+    width: 70% !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .hidden {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+  .header-content .right-header {
+    size: fluid;
+    width: auto;
+  }
+  .controls {
+    margin: 0;
+    top: auto;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: var(--color-grey-5);
+  }
+  .controls .control {
+    margin: 1rem 0.3rem;
+  }
+  .my-achievements {
+    margin-bottom: 20%;
+  }
+  .view-more {
+    display: none !important;
+  }
+  .work-examples .work-example-body .work-example-picture {
+    scale: 60%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .header-content .right-header h1 {
+    font-size: 7vh;
   }
 }/*# sourceMappingURL=styles.css.map */

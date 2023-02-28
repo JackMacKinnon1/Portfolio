@@ -9,10 +9,12 @@
     // nav bar animation
     const controls = document.querySelector(".controls")
     
+
+    
     // plays animation to view rest of profile
     setTimeout(() => {
         seeMorePort.classList.add('pop-in')
-    }, 5000)
+    }, 2000)
     
     document.addEventListener("mousemove", (event) => {
         if (event.clientX > window.innerWidth - (sectBtns[0].offsetWidth + sectBtns[0].clientWidth + 15)) {
@@ -73,7 +75,8 @@
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show')
-            } else {
+            } 
+            else {
                 entry.target.classList.remove('show')
             }
         })

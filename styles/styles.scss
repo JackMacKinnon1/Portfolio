@@ -162,6 +162,11 @@ section {
     align-items: center;
     justify-content: center;
     //max-width: 1080px;
+    .left-header {
+        .image {
+            scale: 95%;
+        }
+    }
     .right-header {
         display: flex;
         width: 60%;
@@ -296,7 +301,7 @@ section {
     align-items: center;
     .work-example-header {
         align-self: center;
-        font-size: 1.3rem;
+        font-size: 1.8rem;
         margin-bottom: 5%;
     }
 
@@ -378,4 +383,81 @@ section {
     max-width: 1080px;
 }
 
+
+.my-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    .my-info-header {
+        align-self: center;
+        font-size: 1.8rem;
+        margin-bottom: 5%;
+    }
+
+    .my-socials {
+        border: 1px solid var(--color-grey-5);
+        border-radius: 25px;
+        display: flex;
+        margin-top: 5%;
+        align-items: center;
+        flex-direction: column;
+        transition: all .4s ease-in-out;
+
+        &:hover {
+            transform: scale(110%);
+        }
+        .github a {
+            margin-top: 3%;
+            font-size: 3rem;
+            transition: all 1s ease-in-out;
+        }
+
+        .github a:hover {
+            transform: scale(120%);
+        }
+    }
+
+    .main-btn {
+        border-radius: 30px;
+        color: inherit;
+        font-weight: 600;
+        position: relative;
+        border: 1px solid var(--color-secondary);
+        display: flex;
+        align-self: flex-start;
+        align-items: center;
+        overflow: hidden;
+    }
+    .main-btn .btn-text {
+        padding: 0 2rem;
+    }
+    .main-btn .btn-icon {
+        background-color: var(--color-secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 1rem;
+    }
+    .main-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+        transition: all 0.4s ease-out;
+        z-index: -1;
+    }
+    .main-btn:hover {
+        transition: all 0.4s ease-out;
+    }
+    .main-btn:hover::before {
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-secondary);
+        transform: translateX(0);
+        transition: all 0.4s ease-out;
+    }
+}
 @import './media';
