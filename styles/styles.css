@@ -97,7 +97,6 @@ section {
   position: fixed;
   z-index: 10;
   top: 50%;
-  right: -75px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -543,6 +542,9 @@ section {
 }
 @media screen and (max-width: 425px) {
   .header-content .right-header h1 {
-    font-size: 7vh;
+    font-size: 5vh;
+  }
+  .header-content .right-header p {
+    font-size: 1.3rem;
   }
 }/*# sourceMappingURL=styles.css.map */
