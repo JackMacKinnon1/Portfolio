@@ -72,6 +72,25 @@
     .work-example-text {
         width: 70% !important;
     }
+
+    .controls{
+        margin: 0;
+        top: auto;
+        bottom: 0;
+        flex-direction: row;
+        justify-content: center;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        background-color: var(--color-grey-5);
+        .control{
+            margin: 1rem .3rem;
+        }
+    }
+
+    .view-more {
+        display: none !important;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -89,33 +108,23 @@
         }
     }
 
-    .controls{
-        margin: 0;
-        top: auto;
-        bottom: 0;
-        flex-direction: row;
-        justify-content: center;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        background-color: var(--color-grey-5);
-        .control{
-            margin: 1rem .3rem;
-        }
-    }
 
     .my-achievements {
         margin-bottom: 20%;
     }
 
-    .view-more {
-        display: none !important;
-    }
 
     .work-examples {
+        .work-example-header {
+            font-size: 1.2rem;
+        }
+        align-items: inherit;
         .work-example-body {
             .work-example-picture {
                 scale: 60%;
+            }
+            .work-example-text {
+                width: 100% !important;
             }
         }
     }

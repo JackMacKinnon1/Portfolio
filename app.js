@@ -8,21 +8,21 @@
     const hiddenElements = document.querySelectorAll('.hidden')
     // nav bar animation
     const controls = document.querySelector(".controls")
+
     
 
     
     // plays animation to view rest of profile
     setTimeout(() => {
         seeMorePort.classList.add('pop-in')
+        document.addEventListener("mousemove", (event) => {
+            if (event.clientX > window.innerWidth - (sectBtns[0].offsetWidth + sectBtns[0].clientWidth + 15)) {
+                controls.style.right = "0";
+            } else {
+                controls.style.right = "-200px";
+            }
+        });
     }, 2000)
-    
-    document.addEventListener("mousemove", (event) => {
-        if (event.clientX > window.innerWidth - (sectBtns[0].offsetWidth + sectBtns[0].clientWidth + 15)) {
-            controls.style.right = "0";
-        } else {
-            controls.style.right = "-200px";
-        }
-    });
     
     function PageTransitions() {
         // Button click active class
@@ -31,6 +31,7 @@
                 let currentBtn = document.querySelectorAll('.active-btn');
                 currentBtn[0].className = currentBtn[0].className.replace('active-btn', '');
                 this.className += ' active-btn';
+                
             });
         }
     
